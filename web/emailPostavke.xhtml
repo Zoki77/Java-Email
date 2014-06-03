@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view locale="#{lokalizacija.odabraniLocale}">
+        <h:head>
+            <title>#{m.emailPostavke_naslov}</title>
+        </h:head>
+        <h:body>
+            <h1>#{m.emailPostavke_naslov}</h1>
+            #{emailPovezivanje.uzmiIzKonfiguracije()}
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{m.emailPostavke_posluzitelj}"/>
+                    <h:inputText value="#{emailPovezivanje.emailPosluzitelj}"/>
+                    <h:outputText value="#{m.emailPostavke_korisnickoIme}"/>
+                    <h:inputText value="#{emailPovezivanje.emailKorisnik}"/>
+                    <h:outputText value="#{m.emailPostavke_lozinka}"/>
+                    <h:inputSecret value="#{emailPovezivanje.emailLozinka}"/> 
+                    
+                    <h:commandButton value="#{m.emailPostavke_citaj}" 
+                                     action="#{emailPovezivanje.citajPoruke()}"/>
+                    <h:commandButton value="#{m.emailPostavke_nova_poruka}"
+                                     action="#{emailPovezivanje.saljiPoruku()}"/>
+                </h:panelGrid>
+
+            </h:form>
+            
+        </h:body>
+    </f:view>
+</html>
+

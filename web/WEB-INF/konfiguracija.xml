@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS konfiguracija zadaca</comment>
+<entry key="emailPosluziteljDretva">localhost</entry>
+<entry key="emailKorisnikDretva">servis@nwtis.nastava.foi.hr</entry>
+<entry key="emailLozinkaDretva">123456</entry>
+<entry key="emailPort">143</entry>
+<entry key="emailPredmet">NWTiS</entry>
+<entry key="interval">180</entry>
+<entry key="ispravnePoruke">NWTiS_IspravnePoruke</entry>
+<entry key="neispravnePoruke">NWTiS_NeispravnePoruke</entry>
+<entry key="ostalePoruke">NWTiS_OstalePoruke</entry>
+<entry key="primateljStatistike">user@nwtis.nastava.foi.hr</entry>
+<entry key="predmetStatistike">Statistika</entry>
+<entry key="folderStatistike">Sent</entry>
+<entry key="emailPosluziteljLogin">localhost</entry>
+<entry key="emailKorisnikLogin">bla@nwtis.nastava.foi.hr</entry>
+<entry key="stranicenje">9</entry>
+<entry key="predmet">NWTiS</entry>
+</properties>

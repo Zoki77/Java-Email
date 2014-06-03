@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.pregledSvih_naslov}</title>
+    </h:head>
+    <h:body>
+        
+        #{pregledSvihPoruka.odabraniFolder}
+        <h:dataTable value="#{pregledSvihPoruka.poruke}" var="p">
+            <h:column>
+                <f:facet name="header">#{m.id}</f:facet>
+                <h:outputText value="#{p.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{m.slanje_poruke_salje}</f:facet>
+                <h:outputText value="#{p.salje}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{m.slanje_poruke_predmet}</f:facet>
+                <h:outputText value="#{p.predmet}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{m.pregledPoruke_vrijeme}</f:facet>
+                <h:outputText value="#{p.vrijeme}">
+                    <f:convertDateTime pattern="dd.MM.yyyy hh:mm:ss"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">vrsta</f:facet>
+                <h:outputText value="#{p.vrstaPoruke}">
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{m.pregled}</f:facet>
+                <h:form>
+                    <h:commandButton value="#{m.poruka}"
+                                     action="#{pregledSvihPoruka.pregledPoruke()}">
+                        <f:setPropertyActionListener target="#{pregledSvihPoruka.porukaID}"
+                                                     value="#{p.id}"/>
+                    </h:commandButton>
+                </h:form>
+
+            </h:column>
+
+        </h:dataTable><br/>
+        <h:form>
+                <h:panelGrid columns="2">
+                    
+                    <h:commandButton value="#{m.prethodne}" 
+                                     action="#{pregledSvihPoruka.prethodna()}"/>
+                    <h:commandButton value="#{m.sljedeci}"
+                                     action="#{pregledSvihPoruka.sljedeca()}"/>
+                </h:panelGrid>
+        </h:form>
+        <h:link value="#{m.slanje_poruke_link}" outcome="emailPostavke"/>
+    </h:body>
+</html>
+

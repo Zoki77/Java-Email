@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.pregledPoruke_naslov}</title>
+    </h:head>
+    <h:body>
+        <h:panelGrid columns="2">
+            <h:outputText value="#{m.slanje_poruke_salje}"/>
+            <h:outputText value="#{pregledPoruke.poruka.salje}"/>
+            <h:outputText value="#{m.slanje_poruke_predmet}"/>
+            <h:outputText value="#{pregledPoruke.poruka.predmet}"/>
+            <h:outputText value="#{m.pregledPoruke_vrijeme}"/>
+            <h:outputText value="#{pregledPoruke.poruka.vrijeme}">
+                <f:convertDateTime pattern="dd.MM.yyyy hh:mm:ss"/>
+            </h:outputText>
+            <h:outputText value="#{m.slanje_poruke_sadrzaj}"/>
+            <h:outputText value="#{pregledPoruke.poruka.sadrzaj}"/>
+        </h:panelGrid>
+        <h:dataTable value="#{pregledPoruke.poruka.privitciPoruke}" var="p">
+            <h:column>
+                <f:facet name="header">#{m.pregledPoruke_vrsta}</f:facet>
+                <h:outputText value="#{p.vrsta}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{m.pregledPoruke_velicina}</f:facet>
+                <h:outputText value="#{p.velicina}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{m.pregledPoruke_datoteka}</f:facet>
+                <h:graphicImage value="slike/#{p.datoteka}"/>
+            </h:column>
+
+        </h:dataTable>
+        <br/>
+        <h:link value="#{m.pregledPoruke_link}" outcome="pregledSvihPoruka"/>
+    </h:body>
+</html>
+

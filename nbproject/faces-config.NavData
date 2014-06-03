@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="pregledSvihPoruka.xhtml" x="144" y="395" zoom="true"/>
+        <Node id="emailPostavke.xhtml" x="627" y="67" zoom="true"/>
+        <Node id="slanjePoruke.xhtml" x="683" y="351" zoom="true"/>
+        <Node id="index.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="pregledPoruke.xhtml" x="62" y="149" zoom="true"/>
+        <Node id="odabirFoldera.xhtml" x="188" y="71" zoom="true"/>
+        <Node id="odabirFolderaNeuspjesan.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="emailPostavkeNeuspjesan.xhtml" x="150" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

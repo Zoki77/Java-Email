@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mail" default="_saljiPoruke" basedir=".">
+    
+    <target name="_saljiPoruke" depends="_poruka_01, _poruka_02">
+    </target>
+    
+    <target name="_poruka_01">
+        <tstamp> 
+            <format property="sada" pattern="yyyy.MM.dd hh:mm:ss" locale="en"/> 
+        </tstamp>        
+        <mail mailhost="localhost" subject="NWTiS poruka 01 - ${sada}">
+            <from address="ztintor@nwtis.nastava.foi.hr"/>
+            <to address="servis@nwtis.nastava.foi.hr"/>
+            <message mimetype="text/plain">
+                USER pero
+                PASSWORD 123456
+                GALERY pero
+            </message>   
+            <attachments>
+                <fileset dir="${basedir}/slike">
+                    <include name="p*.jpg"/>
+                    <include name="P*.jpg"/>
+                </fileset>
+            </attachments>               
+        </mail>
+    </target>
+
+    <target name="_poruka_02">
+        <tstamp> 
+            <format property="sada" pattern="yyyy.MM.dd hh:mm:ss" locale="en"/> 
+        </tstamp>        
+        <mail mailhost="localhost" subject="NWTiS poruka 02 - ${sada}">
+            <from address="ztintor@nwtis.nastava.foi.hr"/>
+            <to address="servis@nwtis.nastava.foi.hr"/>
+            <message mimetype="text/plain">
+                USER mato
+                PASSWORD 123456
+                GALERY mato
+            </message>   
+            <attachments>
+                <fileset dir="${basedir}/slike">
+                    <include name="m*.jpg"/>
+                    <include name="M*.jpg"/>
+                    <include name="m*.png"/>
+                    <include name="M*.png"/>
+                </fileset>
+            </attachments>               
+        </mail>
+    </target>
+
+</project>

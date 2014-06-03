@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.odabirFoldera_naslov}</title>
+    </h:head>
+    <h:body>
+        #{m.odabirFoldera_naslov}: <br/>
+        #{odabirFoldera.dohvatiZaIspis()}
+        <h:form>
+            <h:selectOneListbox value="#{odabirFoldera.odabraniFolder}">                
+                <f:selectItems value="#{odabirFoldera.fld}"/>
+            </h:selectOneListbox>
+
+            <h:commandButton value="#{m.odabirFoldera_gumb}" 
+                             action="#{odabirFoldera.saljiOdabir()}"/>
+        </h:form>
+        <br/>
+        <h:link value="#{m.slanje_poruke_link}" outcome="emailPostavke"/>
+        #{pregledSvihPoruka.promjeniPocetnoStanje()}
+    </h:body>
+</html>
+

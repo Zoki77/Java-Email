@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="salji" default="_poruke" basedir=".">
+    
+    <property name="glassfish.lib.home" value="C:/Program Files/glassfish-3.1.2.2/glassfish/modules"/>    
+
+    <path id="mail.path">
+        <pathelement location="${glassfish.lib.home}/javax.mail.jar" />
+    </path>
+        
+    <target name="_poruke">                      
+        <java
+            classname="org.apache.tools.ant.launch.Launcher"
+            fork="true"
+            failonerror="true"
+            dir="${basedir}"
+            timeout="4000000"
+            taskname="startAnt">
+            
+            <classpath>
+                <pathelement location="${ant.home}/lib/ant-launcher.jar"/>
+                <pathelement location="${glassfish.lib.home}/javax.mail.jar"/>        
+            </classpath>
+                    
+            <arg value="-buildfile"/>
+            <arg file="mail.xml"/>            
+            <arg value="_saljiPoruke"/>
+        </java>
+    </target>
+</project>
+
